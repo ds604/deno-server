@@ -48,7 +48,7 @@ for await (const conn of listener){
 			const client = await dbPool.connect()
 			const result = await client.queryArray("SELECT * FROM Users;")
 			await client.release()
-			respondWith(new Response(JSON.stringify(result.row), {headers: {"content-type": "application/json"}}))
+			respondWith(new Response(JSON.stringify(result.rows), {headers: {"content-type": "application/json"}}))
 		}
 	})();
 }
