@@ -1,1 +1,1 @@
-web: deno run --allow-net=:${PORT} server.ts --port=${PORT}
+web: deno run --allow-net --allow-env --unstable server.ts --port=${PORT}
