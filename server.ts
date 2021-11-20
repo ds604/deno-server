@@ -17,9 +17,8 @@ await client.connect()
 for await (const req of s){
 	const array_result = await client.queryArray("SELECT * FROM Users;")
 	req.respond({ body: `Hello World!\n
-			${new Date()}\n
-			foobar!!!!!\n
-			${array_result.rows}
-			`})
+${new Date()}\n
+foobar!!!!!\n
+${JSON.stringify(array_result.rows, null, 2)} `})
 }
 await client.end()
